@@ -1,8 +1,9 @@
 ﻿using System;
+using SignUpApp.Domain.Exceptions;
 using System.Threading.Tasks;
 using SignUpApp.Domain.Models;
 
-namespace SimpleTrader.Domain.Services.AuthenticationServices
+namespace SignUpApp.Domain.Services.AuthenticationServices
 {
     public enum RegistrationResult
     {

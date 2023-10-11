@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace SimpleTrader.Domain.Exceptions
+namespace SignUpApp.Domain.Exceptions
 {
     public class UserNotFoundException : Exception
     {

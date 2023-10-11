@@ -1,8 +1,10 @@
 ﻿using Microsoft.AspNet.Identity;
+using SignUpApp.Domain.Exceptions;
+using SignUpApp.Domain.Models;
 using System;
 using System.Threading.Tasks;
 
-namespace SimpleTrader.Domain.Services.AuthenticationServices
+namespace SignUpApp.Domain.Services.AuthenticationServices
 {
     public class AuthenticationService : IAuthenticationService
     {
