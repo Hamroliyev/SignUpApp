@@ -1,6 +1,6 @@
 ﻿namespace SignUpApp.Domain.Models
 {
-    public class Account
+    public class Account : DomainObject
     {
         public User AccountHolder { get; set; }
     }

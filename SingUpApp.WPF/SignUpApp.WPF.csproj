@@ -6,4 +6,8 @@
     <UseWPF>true</UseWPF>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\SignUpApp.Domain\SignUpApp.Domain.csproj" />
+  </ItemGroup>
+
 </Project>
