@@ -1,9 +1,13 @@
-﻿<Application x:Class="SingUpApp.WPF.App"
-             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:local="clr-namespace:SingUpApp.WPF">
+﻿<Application
+    x:Class="SingUpApp.WPF.App"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="clr-namespace:SingUpApp.WPF"
+    xmlns:viewmodels="clr-namespace:SignUpApp.WPF.ViewModels"
+    xmlns:views="clr-namespace:SignUpApp.WPF.Views">
     <Application.Resources>
         <ResourceDictionary>
+
             <DataTemplate DataType="{x:Type viewmodels:LoginViewModel}">
                 <views:LoginView />
             </DataTemplate>

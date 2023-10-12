@@ -12,6 +12,7 @@ using SignUpApp.WPF.State.Accounts;
 using SignUpApp.WPF.State.Authenticators;
 using SignUpApp.WPF.State.Navigators;
 using SignUpApp.WPF.ViewModels;
+using SignUpApp.WPF.Views;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
@@ -45,8 +46,7 @@ namespace SingUpApp.WPF
                 .ConfigureServices((context, services) =>
                 {
                     string connectionString = context.Configuration.GetConnectionString("default");
-                    services.AddDbContext<SignUpAppDbContext>(
-                        o => o.UseSqlServer(connectionString));
+                    
                     services.AddSingleton<SignUpAppDbContextFactory>(new SignUpAppDbContextFactory(connectionString));
                     services.AddSingleton<IAuthenticationService, AuthenticationService>();
                     services.AddSingleton<IDataService<Account>, AccountDataService>();
@@ -80,6 +80,7 @@ namespace SingUpApp.WPF
                     services.AddScoped<MainViewModel>();
 
                     services.AddScoped<MainWindow>(s => new MainWindow(s.GetRequiredService<MainViewModel>()));
+                    services.AddScoped<RegisterView>();
                 });
         }
 
@@ -87,7 +88,7 @@ namespace SingUpApp.WPF
         {
             _host.Start();
 
-            Window window = _host.Services.GetRequiredService<MainWindow>();
+            Window window = _host.Services.GetRequiredService<RegisterView>();
             window.Show();
 
             base.OnStartup(e);

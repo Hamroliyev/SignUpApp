@@ -4,18 +4,13 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:local="clr-namespace:SingUpApp.WPF"
-    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:views="clr-namespace:SignUpApp.WPF.Views"
     Title="MainWindow"
     Width="800"
     Height="450"
     mc:Ignorable="d"
     WindowStartupLocation="CenterScreen">
     <Grid>
-        <ScrollViewer
-            Grid.Row="1"
-            HorizontalScrollBarVisibility="Disabled"
-            VerticalScrollBarVisibility="Auto">
-            <ContentControl Content="{Binding CurrentViewModel}" />
-        </ScrollViewer>
+        
     </Grid>
 </Window>

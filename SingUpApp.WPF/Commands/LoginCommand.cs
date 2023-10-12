@@ -1,4 +1,5 @@
-﻿using SignUpApp.WPF.State.Authenticators;
+﻿using SignUpApp.Domain.Exceptions;
+using SignUpApp.WPF.State.Authenticators;
 using SignUpApp.WPF.State.Navigators;
 using SignUpApp.WPF.ViewModels;
 using System;
