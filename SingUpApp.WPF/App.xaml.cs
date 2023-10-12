@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNet.Identity;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -44,7 +45,8 @@ namespace SingUpApp.WPF
                 .ConfigureServices((context, services) =>
                 {
                     string connectionString = context.Configuration.GetConnectionString("default");
-                    services.AddDbContext<SignUpAppDbContext>(o => o.UseSqlServer(connectionString));
+                    services.AddDbContext<SignUpAppDbContext>(
+                        o => o.UseSqlServer(connectionString));
                     services.AddSingleton<SignUpAppDbContextFactory>(new SignUpAppDbContextFactory(connectionString));
                     services.AddSingleton<IAuthenticationService, AuthenticationService>();
                     services.AddSingleton<IDataService<Account>, AccountDataService>();

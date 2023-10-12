@@ -7,7 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SignUpApp.WPF", "SingUpApp.
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SignUpApp.Domain", "SignUpApp.Domain\SignUpApp.Domain.csproj", "{0D17C875-0A65-4E7C-9E23-0C3A20C16ABB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SignUpApp.EntityFramework", "SignUpApp.EntityFramework\SignUpApp.EntityFramework.csproj", "{F75EFBB9-150A-4FDD-8B09-433AA11F76BB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SignUpApp.EntityFramework", "SignUpApp.EntityFramework\SignUpApp.EntityFramework.csproj", "{F75EFBB9-150A-4FDD-8B09-433AA11F76BB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
