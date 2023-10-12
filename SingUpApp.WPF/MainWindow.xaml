@@ -9,5 +9,12 @@
     Width="800"
     Height="450"
     mc:Ignorable="d">
-    <Grid />
+    <Grid>
+        <ScrollViewer
+            Grid.Row="1"
+            HorizontalScrollBarVisibility="Disabled"
+            VerticalScrollBarVisibility="Auto">
+            <ContentControl Content="{Binding CurrentViewModel}" />
+        </ScrollViewer>
+    </Grid>
 </Window>
