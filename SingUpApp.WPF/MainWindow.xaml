@@ -11,6 +11,10 @@
     mc:Ignorable="d"
     WindowStartupLocation="CenterScreen">
     <Grid>
-        
+        <ScrollViewer
+            HorizontalScrollBarVisibility="Disabled"
+            VerticalScrollBarVisibility="Auto">
+            <ContentControl Content="{Binding CurrentViewModel}" />
+        </ScrollViewer>
     </Grid>
 </Window>

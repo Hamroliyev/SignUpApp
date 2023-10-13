@@ -12,6 +12,7 @@ using SignUpApp.WPF.State.Accounts;
 using SignUpApp.WPF.State.Authenticators;
 using SignUpApp.WPF.State.Navigators;
 using SignUpApp.WPF.ViewModels;
+using SignUpApp.WPF.ViewModels.Factories;
 using SignUpApp.WPF.Views;
 using System.Windows;
 
@@ -48,7 +49,13 @@ namespace SingUpApp.WPF
 
                     services.AddSingleton<IPasswordHasher, PasswordHasher>();
 
-                    
+                    services.AddSingleton<ISignUpViewModelFactory, SignUpViewModelFactory>();
+
+                    services.AddSingleton<CreateViewModel<HomeViewModel>>(services =>
+                    {
+                        return () => services.GetRequiredService<HomeViewModel>();
+                    });
+
                     services.AddSingleton<ViewModelDelegateRenavigator<LoginViewModel>>();
                     services.AddSingleton<CreateViewModel<RegisterViewModel>>(services =>
                     {

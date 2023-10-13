@@ -10,12 +10,7 @@
     <UserControl.Resources>
         <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter" />
     </UserControl.Resources>
-    <UserControl.Background>
-        <ImageBrush
-            ImageSource="/Resources/abstract-digital-grid-black-background.jpg"
-            Opacity="0.5"
-            Stretch="UniformToFill" />
-    </UserControl.Background>
+ 
     <Border Margin="25" Padding="50"
         HorizontalAlignment="Center"
         VerticalAlignment="Center"
