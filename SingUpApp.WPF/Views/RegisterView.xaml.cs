@@ -10,16 +10,17 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace SignUpApp.WPF.Views
 {
     /// <summary>
-    /// Interaction logic for Register.xaml
+    /// Interaction logic for RegisterView.xaml
     /// </summary>
-    public partial class Register : Window
+    public partial class RegisterView : UserControl
     {
-        public Register()
+        public RegisterView()
         {
             InitializeComponent();
         }
