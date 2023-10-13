@@ -13,12 +13,6 @@ using SignUpApp.WPF.State.Authenticators;
 using SignUpApp.WPF.State.Navigators;
 using SignUpApp.WPF.ViewModels;
 using SignUpApp.WPF.Views;
-using System;
-using System.Collections.Generic;
-using System.Configuration;
-using System.Data;
-using System.Linq;
-using System.Threading.Tasks;
 using System.Windows;
 
 namespace SingUpApp.WPF
