@@ -88,7 +88,7 @@ namespace SingUpApp.WPF
         {
             _host.Start();
 
-            Window window = _host.Services.GetRequiredService<RegisterView>();
+            Window window = _host.Services.GetRequiredService<MainWindow>();
             window.Show();
 
             base.OnStartup(e);
