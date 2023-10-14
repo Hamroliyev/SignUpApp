@@ -12,7 +12,6 @@ using SignUpApp.WPF.State.Authenticators;
 using SignUpApp.WPF.State.Navigators;
 using SignUpApp.WPF.ViewModels;
 using SignUpApp.WPF.ViewModels.Factories;
-using SignUpApp.WPF.Views;
 using System.Windows;
 
 namespace SignUpApp.WPF
@@ -80,7 +79,6 @@ namespace SignUpApp.WPF
                     services.AddScoped<MainViewModel>();
 
                     services.AddScoped<MainWindow>(s => new MainWindow(s.GetRequiredService<MainViewModel>()));
-                    services.AddScoped<RegisterView>();
                 });
         }
 

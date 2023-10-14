@@ -16,4 +16,10 @@
     <ProjectReference Include="..\SignUpApp.EntityFramework\SignUpApp.EntityFramework.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Update="appsettings.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
 </Project>
