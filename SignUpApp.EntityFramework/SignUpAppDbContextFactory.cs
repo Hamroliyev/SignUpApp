@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Design;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace SignUpApp.EntityFramework
 {
-    public class SignUpAppDbContextFactory
+    public class SignUpAppDbContextFactory : IDesignTimeDbContextFactory<SignUpAppDbContext>
     {
         private readonly string _connectionString;
 
