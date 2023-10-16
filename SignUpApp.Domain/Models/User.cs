@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SignUpApp.Domain.Models
 {
-    public class User
+    public class User : DomainObject
     {
         public string Email { get; set; }
         public string Username { get; set; }

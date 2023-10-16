@@ -1,22 +1,15 @@
-﻿using Microsoft.EntityFrameworkCore.Design;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Design;
 
 namespace SignUpApp.EntityFramework
 {
     public class SignUpAppDbContextFactory
     {
-        private readonly string _connectionString;
-
-        public SignUpAppDbContextFactory(string connectionString)
-        {
-            _connectionString = connectionString;
-        }
-
         public SignUpAppDbContext CreateDbContext(string[] args = null)
         {
-            var options = new DbContextOptionsBuilder<SignUpAppDbContext>();
+            DbContextOptionsBuilder<SignUpAppDbContext> options = new DbContextOptionsBuilder<SignUpAppDbContext>();
 
-            options.UseSqlServer(_connectionString);
+            options.UseSqlServer("Data Source=(LocalDB)\\MSSQLLocalDB;Initial Catalog=SignUpDB;Integrated Security=True;Connect Timeout=30; Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
 
             return new SignUpAppDbContext(options.Options);
         }
