@@ -10,7 +10,11 @@ namespace SignUpApp.EntityFramework
         public DbSet<Account> Accounts { get; set; }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer("Data Source=(LocalDB)\\MSSQLLocalDB;Initial Catalog=SignUpDB;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
+            optionsBuilder.UseSqlServer(
+                "Data Source=(LocalDB)\\MSSQLLocalDB;Initial Catalog=SignUpDB;Integrated Security=True;Connect Timeout=30;" +
+                "Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
+
+            base.OnConfiguring(optionsBuilder);
         }
     }
 }
