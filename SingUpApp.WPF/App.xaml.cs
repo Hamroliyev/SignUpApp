@@ -41,7 +41,8 @@ namespace SingUpApp.WPF
                 .ConfigureServices((context, services) =>
                 {
                     string connectionString = context.Configuration.GetConnectionString("default");
-                    
+
+                    services.AddDbContext<SignUpAppDbContext>(options => options.UseSqlServer(connectionString));
                     services.AddSingleton<SignUpAppDbContextFactory>(new SignUpAppDbContextFactory(connectionString));
                     services.AddSingleton<IAuthenticationService, AuthenticationService>();
                     services.AddSingleton<IDataService<Account>, AccountDataService>();
