@@ -26,7 +26,6 @@ namespace SignUpApp.WPF.Commands
         {
             return true;
         }
-
         public async void Execute(object parameter)
         {
             _registerViewModel.ErrorMessage = string.Empty;

@@ -50,7 +50,7 @@ namespace SingUpApp.WPF
                     services.AddSingleton<IPasswordHasher, PasswordHasher>();
 
                     services.AddSingleton<ISignUpViewModelFactory, SignUpViewModelFactory>();
-
+                    services.AddSingleton<HomeViewModel>();
                     services.AddSingleton<CreateViewModel<HomeViewModel>>(services =>
                     {
                         return () => services.GetRequiredService<HomeViewModel>();

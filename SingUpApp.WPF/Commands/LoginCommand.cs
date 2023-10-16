@@ -7,10 +7,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Input;
 
 namespace SignUpApp.WPF.Commands
 {
-    public class LoginCommand : AsyncCommandBase
+    public class LoginCommand : ICommand
     {
         private readonly LoginViewModel _loginViewModel;
         private readonly IAuthenticator _authenticator;
@@ -23,7 +24,14 @@ namespace SignUpApp.WPF.Commands
             _renavigator = renavigator;
         }
 
-        public override async Task ExecuteAsync(object parameter)
+        public event EventHandler CanExecuteChanged;
+
+        public bool CanExecute(object parameter)
+        {
+            return true;
+        }
+
+        public async void Execute(object parameter)
         {
             try
             {
