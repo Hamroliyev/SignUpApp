@@ -43,10 +43,20 @@ namespace SignUpApp.Domain.Services.AuthenticationServices
             Match match = regex.Match(plainText);
             return match.Success;
         }
-
+        public static bool isValidEmail(string inputEmail)
+        {
+            string strRegex = @"^([a-zA-Z0-9_\-\.]+)@((\[[0-9]{1,3}" +
+                  @"\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\" +
+                  @".)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$";
+            Regex re = new Regex(strRegex);
+            if (re.IsMatch(inputEmail))
+                return (true);
+            else
+                return (false);
+        }
         public bool IsValidEmail(string plainText)
         {
-            Regex regex = new Regex(@"^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$");
+            Regex regex = new Regex(@"^([\w\.\-]+)@([\w\-]+)((\.(\w){2,3})+)$");
             Match match = regex.Match(plainText);
             return match.Success;
         }
@@ -55,9 +65,9 @@ namespace SignUpApp.Domain.Services.AuthenticationServices
         {
             RegistrationResult result = RegistrationResult.Success;
 
-            if (IsValidEmail(email))
+            if (!isValidEmail(email))
             {
-                result = RegistrationResult.InvalidPassword;
+                result = RegistrationResult.InvalidEmail;
                 return result;
             }
 

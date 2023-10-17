@@ -43,6 +43,9 @@ namespace SignUpApp.WPF.Commands
                     case RegistrationResult.Success:
                         _registerRenavigator.Renavigate();
                         break;
+                    case RegistrationResult.InvalidEmail:
+                        _registerViewModel.ErrorMessage = "Ivalid email.";
+                        break;
                     case RegistrationResult.InvalidPassword:
                         _registerViewModel.ErrorMessage = "Ivalid password. Password should contain at least one UpperCase letter and digit";
                         break;
