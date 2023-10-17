@@ -24,5 +24,10 @@ namespace SignUpApp.WPF.Views
         {
             InitializeComponent();
         }
+
+        private void PassowrdChecker_Checked(object sender, RoutedEventArgs e)
+        {
+           
+        }
     }
 }

@@ -2,6 +2,7 @@
 using SignUpApp.Domain.Exceptions;
 using SignUpApp.Domain.Models;
 using System;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 namespace SignUpApp.Domain.Services.AuthenticationServices
@@ -36,13 +37,40 @@ namespace SignUpApp.Domain.Services.AuthenticationServices
             return storedAccount;
         }
 
+        public bool IsValidPassword(string plainText)
+        {
+            Regex regex = new Regex(@"^(.{0,7}|[^0-9]*|[^A-Z])$");
+            Match match = regex.Match(plainText);
+            return match.Success;
+        }
+
+        public bool IsValidEmail(string plainText)
+        {
+            Regex regex = new Regex(@"^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$");
+            Match match = regex.Match(plainText);
+            return match.Success;
+        }
+
         public async Task<RegistrationResult> Register(string email, string userName, string password, string confirmPassword)
         {
             RegistrationResult result = RegistrationResult.Success;
 
+            if (IsValidEmail(email))
+            {
+                result = RegistrationResult.InvalidPassword;
+                return result;
+            }
+
+            if (IsValidPassword(password))
+            {
+                result = RegistrationResult.InvalidPassword;
+                return result;
+            }
+
             if (password != confirmPassword)
             {
                 result = RegistrationResult.PasswordsDoNotMatch;
+                return result;
             }
 
             Account emailAccount = await _accountService.GetByEmail(email);

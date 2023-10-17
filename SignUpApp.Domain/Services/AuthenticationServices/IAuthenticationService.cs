@@ -10,7 +10,8 @@ namespace SignUpApp.Domain.Services.AuthenticationServices
         Success,
         PasswordsDoNotMatch,
         EmailAlreadyExists,
-        UserNameAlreadyExists
+        UserNameAlreadyExists,
+        InvalidPassword
     }
     public interface IAuthenticationService
     {
