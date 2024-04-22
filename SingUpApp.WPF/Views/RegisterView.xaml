@@ -96,16 +96,26 @@
                             <RowDefinition Height="auto" />
                         </Grid.RowDefinitions>
 
-                        <components:BindablePasswordBox
-                            x:Name="Password"
-                            Grid.Row="0"
-                            Margin="20,0,0,0"
-                            Password="{Binding Password}" />
+                        <StackPanel Grid.Row="0" Orientation="Horizontal">
+                            <Grid Width="300" Height="40" HorizontalAlignment="Right">
+                                <components:BindablePasswordBox
+                                    x:Name="Password"
+                                    Margin="20,0,0,0"
+                                    Password="{Binding Password}" />
+                                <TextBox x:Name="passwordTxtBox" 
+                                         Margin="20,0,0,0"
+                                         Visibility="Hidden"
+                                         Text="{Binding Password}"/>
+                            </Grid>
+                        </StackPanel>
                         <CheckBox
-                            Grid.Row="1"
-                            HorizontalAlignment="Right"
-                            Content="Show"
-                            FontSize="12" />
+                                x:Name="checker"
+                                Grid.Row="1"
+                                HorizontalAlignment="Right"
+                                Checked="checker_Checked"
+                                Unchecked="checker_Unchecked"
+                                Content="Show"
+                                FontSize="12" />
                     </Grid>
                 </Grid>
 

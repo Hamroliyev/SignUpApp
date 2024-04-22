@@ -24,5 +24,18 @@ namespace SignUpApp.WPF.Views
         {
             InitializeComponent();
         }
+
+        private void checker_Unchecked(object sender, RoutedEventArgs e)
+        {
+            passwordTxtBox.Visibility = Visibility.Hidden;
+            Password.Visibility = Visibility.Visible;
+        }
+
+        private void checker_Checked(object sender, RoutedEventArgs e)
+        {
+            Password.Visibility = Visibility.Hidden;
+            passwordTxtBox.Visibility = Visibility.Visible;
+            passwordTxtBox.Text = Password.Password.ToString();
+        }
     }
 }
